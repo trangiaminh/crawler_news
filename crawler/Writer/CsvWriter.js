@@ -9,7 +9,7 @@ const normalize = (value) => {
   if (!_.isString(value)) {
     return value;
   }
-  return value.replace('"', '""');
+  return _.replace(value, new RegExp('"', "g"), '""');
 };
 
 const buildTemplate = (header) => {
