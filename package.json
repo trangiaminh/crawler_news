@@ -1,0 +1,26 @@
+{
+  "name": "crawler_news",
+  "version": "1.0.0",
+  "description": "Crawler news: VNExpress, TuoiTre, TheSaiGonTime, ... to csv",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trangiaminh/crawler_news.git"
+  },
+  "author": "Tran Gia Minh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trangiaminh/crawler_news/issues"
+  },
+  "homepage": "https://github.com/trangiaminh/crawler_news#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "lodash": "^4.17.11",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.24.0"
+  }
+}
