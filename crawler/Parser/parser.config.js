@@ -56,6 +56,62 @@ module.exports = {
         ],
         normalize: Normalizer.normalizeLinkFn('https://www.thesaigontimes.vn'),
       }
+    },
+    {
+      host: 'news.zing.vn',
+      title: {
+        selectors: [
+          '.the-article-header .the-article-title',
+          'div.video-info h2.video-title'
+        ]
+      },
+      author: {
+        selectors: [
+          'div.the-article-credit p.author',
+          'div.video-info p.video-author>strong'
+        ],
+        normalize: Normalizer.normalizeAuthorFn()
+      },
+      date: {
+        selectors: [
+          '.the-article-header .the-article-publish',
+          'div.video-info span.publish'
+        ],
+        normalize: Normalizer.normalizeDateFn('HH:mm DD/MM/YYYY', DATE_FORMAT),
+      },
+      links: {
+        selectors: [
+          '.recommendation .article-item .article-title>a',
+          '#video-mostview .article-item .article-title>a'
+        ],
+        normalize: Normalizer.normalizeLinkFn('https://news.zing.vn'),
+      }
+    },
+    {
+      host: 'tuoitre.vn',
+      title: {
+        selectors: [
+          '#content h1.article-title'
+        ]
+      },
+      author: {
+        selectors: [
+          '#content div.author'
+        ],
+        normalize: Normalizer.normalizeAuthorFn()
+      },
+      date: {
+        selectors: [
+          '#content div.date-time'
+        ],
+        normalize: Normalizer.normalizeDateFn('DD/MM/YYYY HH:mm', DATE_FORMAT),
+      },
+      links: {
+        selectors: [
+          'div.box-newsrelated .list-news div.name-title>a'
+        ],
+        normalize: Normalizer.normalizeLinkFn('https://tuoitre.vn'),
+      }
     }
   ]
 };
